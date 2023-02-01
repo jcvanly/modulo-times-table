@@ -47,7 +47,6 @@ public class Main extends Application {
         Label timesTableLabel = new Label("Times Table Number:");
         Label stepNumLabel = new Label("Increment:");
         Label delayLabel = new Label("Delay (seconds):");
-        Label jumpToLabel = new Label("Reset Parameters");
         Label timesTableNumLabel = new Label("Times Table Number:");
         Label numPointsLabel = new Label("Number Of Points:");
         Button jumpToButton = new Button("Reset");
@@ -75,7 +74,7 @@ public class Main extends Application {
         delaySlider.setMajorTickUnit(0.25);
         delaySlider.setBlockIncrement(0.1);
         delayBox.getChildren().addAll(new Node[]{delayLabel, delaySlider});
-        controls.getChildren().addAll(new Node[]{start, pause, timesTableBox, stepNumBox, delayBox, jumpToLabel, timesTableNumBox, numPointsBox, jumpToButton});
+        controls.getChildren().addAll(new Node[]{start, pause, timesTableBox, stepNumBox, delayBox, timesTableNumBox, numPointsBox, jumpToButton});
         Canvas canvas = new Canvas(900, 512);
         final Pane root = new Pane(new Node[]{canvas, circle, controls});
         Scene scene = new Scene(root, 900, 512);
