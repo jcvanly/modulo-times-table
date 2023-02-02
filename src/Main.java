@@ -31,7 +31,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Times Table Visualizer");
         double initTimeTableNum = 2; //this is the initial value of the times table
-        Circle circle = new Circle(600, 256, 235);
+        Circle circle = new Circle(600, 256, 235); //sets the circle and fills
         circle.setFill(Color.WHITE);
         circle.setStroke(Color.BLACK);
 
@@ -42,17 +42,18 @@ public class Main extends Application {
         controls.setLayoutY(60);
         HBox timesTableBox = new HBox(buttonSpacing);
 
+        //defining labels and buttons
         Button start = new Button("Start");
         Button pause = new Button("Pause");
+        Button jumpToButton = new Button("Reset");
         Label timesTableLabel = new Label("Times Table Number:");
         Label stepNumLabel = new Label("Increment:");
         Label delayLabel = new Label("Delay (seconds):");
         Label timesTableNumLabel = new Label("Times Table Number:");
         Label numPointsLabel = new Label("Number Of Points:");
-        Button jumpToButton = new Button("Reset");
+        final Label timesTableValueLabel = new Label(Double.toString(initTimeTableNum));
 
         final DecimalFormat timesTableDecimalFormat = new DecimalFormat("#.0");
-        final Label timesTableValueLabel = new Label(Double.toString(initTimeTableNum));
         timesTableBox.getChildren().addAll(new Node[]{timesTableLabel, timesTableValueLabel});
         HBox stepNumBox = new HBox(buttonSpacing);
         HBox timesTableNumBox = new HBox(buttonSpacing);
@@ -108,12 +109,15 @@ public class Main extends Application {
         }
 
         MyAnimationTimer timer = new MyAnimationTimer();
+
         start.setOnAction((event) -> {
             timer.start();
         });
+
         pause.setOnAction((event) -> {
             timer.stop();
         });
+
         jumpToButton.setOnAction((event) -> {
             timer.stop();
             visualization.setTimesTableNumber(Double.parseDouble(timesTableNumTF.getText()));

@@ -40,11 +40,11 @@ public class PointVisualization {
         for(int i = 0; i < pointLength; ++i) {
             PointOnCircle point = pointLists[i];
             double m = this.getTimesTableNumber();
-            double d = m * (double)point.getId();
+            double d = m * (double)point.getPointID();
             double correspondingPointId = d % numPoints;
             PointOnCircle pointTo = pointOnCircles[(int)correspondingPointId];
-            PointOnCircle pointFrom = pointOnCircles[point.getId()];
-            Line line = new Line(pointFrom.getX(), pointFrom.getY(), pointTo.getX(), pointTo.getY());
+            PointOnCircle pointFrom = pointOnCircles[point.getPointID()];
+            Line line = new Line(pointFrom.getPointX(), pointFrom.getPointY(), pointTo.getPointX(), pointTo.getPointY());
             line.setStroke(color);
             lines.getChildren().add(line);
         }

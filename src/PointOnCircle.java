@@ -7,22 +7,20 @@
  */
 
 public class PointOnCircle {
-    private final int id;
-    private final double x;
-    private final double y;
+    private final int pointID;
+    private final double pointX;
+    private final double pointY;
 
-    public PointOnCircle(int id, double x, double y) {this.id = id; this.x = x; this.y = y;}
+    public PointOnCircle(int id, double x, double y) {this.pointID = id; this.pointX = x; this.pointY = y;}
 
-    public int getId() {
-        return this.id;
+    public int getPointID() {return this.pointID;}
+
+    public double getPointX() {
+        return this.pointX + 600;
     }
 
-    public double getX() {
-        return this.x + 600;
-    }
-
-    public double getY() {
-        return this.y + 256;
+    public double getPointY() {
+        return this.pointY + 256;
     }
 
     public static PointOnCircle[] generatePoints(double radius, double num) {
