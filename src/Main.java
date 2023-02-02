@@ -53,6 +53,7 @@ public class Main extends Application {
         Label numPointsLabel = new Label("Number Of Points:");
         final Label timesTableValueLabel = new Label(Double.toString(initTimeTableNum));
 
+        //adding functionality to the buttons
         final DecimalFormat timesTableDecimalFormat = new DecimalFormat("#.0");
         timesTableBox.getChildren().addAll(new Node[]{timesTableLabel, timesTableValueLabel});
         HBox stepNumBox = new HBox(buttonSpacing);
